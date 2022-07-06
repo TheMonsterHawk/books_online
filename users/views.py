@@ -17,7 +17,6 @@ from users.serializers import UserSerializer
 
 
 import jwt 
-from time import strftime 
 
 JWT_ALGORITHMS = getattr(settings, 'JWT_ALGORITHMS', []) 
 JWT_SECRET_KEY = getattr(settings, 'JWT_SECRET_KEY', '') 
@@ -61,7 +60,6 @@ class LoginView(APIView):
     permission_classes = [AllowAny, ]
 
     def get(self, request): 
-
         response = Response({ 
             'message': 'Enter username and password to login!', 
         })

@@ -42,8 +42,9 @@ INSTALLED_APPS = [
     'rest_framework', 
 
     #dev apps 
-    'users', 
-    'pub_auth', 
+    'users.apps.UsersConfig', 
+    'pub_auth.apps.PubAuthConfig', 
+    'books.apps.BooksConfig', 
 
 ]
 
