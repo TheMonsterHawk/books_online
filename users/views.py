@@ -48,7 +48,6 @@ class SignUpView(APIView):
         username = request.data.get('username', '') 
         password = request.data.get('password', '') 
         email = request.data.get('email', '') 
-
         User.objects.create_user(username=username, password=password, email=email) 
 
         return Response({
@@ -58,7 +57,6 @@ class SignUpView(APIView):
         })
 
 class LoginView(APIView):
-
     authentication_classes = [] 
     permission_classes = [AllowAny, ]
 

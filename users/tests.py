@@ -26,13 +26,13 @@ class UserTest(TestCase):
         self.assertTrue(user.is_superuser)
         self.assertTrue(user.is_staff) 
     
-    def test_birth_date_not_in_future_validation_error(self): 
-        User = get_user_model() 
-        d = datetime.now() + relativedelta(years=1) 
-        with self.assertRaises(ValidationError) as cm: 
-            user = User.objects.create_superuser(username='test', email='test@test.com', birth_date=d) 
-        error = cm.exception 
-        self.assertEqual(error.message, 'Birth date can not be in future!') 
+    # def test_birth_date_not_in_future_validation_error(self): 
+    #     User = get_user_model() 
+    #     d = datetime.now() + relativedelta(years=1) 
+    #     with self.assertRaises(ValidationError) as cm: 
+    #         user = User.objects.create_superuser(username='test', email='test@test.com', birth_date=d) 
+    #     error = cm.exception 
+    #     self.assertEqual(error.message, 'Birth date can not be in future!') 
 
     def test_gender_value_not_valid_error(self): 
         User = get_user_model() 

@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     #dev apps 
     'users', 
+    'pub_auth', 
 
 ]
 
