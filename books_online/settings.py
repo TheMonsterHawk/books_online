@@ -37,6 +37,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    #3rd party apps 
+    'rest_framework', 
+
+    #dev apps 
+    'users.apps.UsersConfig', 
+    'pub_auth.apps.PubAuthConfig', 
+    'books.apps.BooksConfig', 
+
 ]
 
 MIDDLEWARE = [
@@ -121,3 +130,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'users.User' 
+
+JWT_SECRET_KEY = 'secret' 
+
+JWT_ALGORITHMS = [ 
+    'HS256', 
+]
+
+REST_FRAMEWORK = { 
+    'DEFAULT_AUTHENTICATION_CALSSES': [ 
+        'users.authentication.CustomTokenAuthentication', 
+    ], 
+    'DEFAULT_PERMISSION_CLASSES': [ 
+        'rest_framework.permissions.AllowAny', 
+    ], 
+}
